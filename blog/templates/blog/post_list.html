@@ -3,21 +3,17 @@
         <title>Django Girls blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </div>
+    <div>
+    	<h1><a href="/">Django Girls Blog</a></h1>
+    </div>
 
+    {% for post in posts %}
         <div>
-            <p>published: 30.07.2020, 14:16</p>
-            <h2><a href="">Mi primer blog</a></h2>
-            <p>Cuentan que cuentan que en una ciudad habia tres hermanas que se ganaban la vida hilando lino. Las tres eran muy bellas, pero la mas pequeña era la mas dulce, la màs encantadora y la màs diestra en su labor. Esto despertaba la envidia de las dos mayores</p>
+            <p> publicado: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <div>
-            <p>published: 30.07.2020, 14:16</p>
-            <h2><a href="">Mi segundo post</a></h2>
-            <p>Un dpia, la hermana menor compro en el mercado un modesto jarroncito que le pareciò lindo. Sus hermanas se burlaron y le dijeron que habia derrochado su dinero. Como consuelo, ella le puso una flor y lo ubicpo junto a su rueda de hilar.</p>
-        </div>
+    {% endfor %}
     </body>
 </html>
 
